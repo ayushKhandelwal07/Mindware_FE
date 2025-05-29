@@ -38,7 +38,7 @@ export function Card( {title , link , type } : CardInterface){
                 
                         </div>
                         
-                        <div className="pt-4">
+                        <div className="pt-4 min-w-80">
                                         {type === "youtube" &&  <iframe width="100%" height="200" src={`https://www.youtube.com/embed/${link.split('v=')[1]?.split('&')[0]}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe> }
 
                                {/* // https://www.youtube.com/watch?v=kq_4X_lc2bo &ab_channel=WaltDisneyStudiosIndia

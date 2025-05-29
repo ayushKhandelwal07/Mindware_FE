@@ -51,10 +51,10 @@ function Dashboard() {
           />}/> 
       </div>
     
-      <div className="flex gap-4">
+      {/* <div className="flex gap-4">
         <Card type="twitter" link="https://x.com/kirat_tw/status/1883972854481576211" title="motivation"/>
         <Card type="youtube" link="https://www.youtube.com/watch?v=PT2_F-1esPk&ab_channel=ChainsmokersVEVO" title="Youtube video"/>
-      </div>
+      </div> */}
 
       <div className="flex gap-4 flex-wrap">
 
