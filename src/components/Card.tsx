@@ -10,7 +10,6 @@ interface CardInterface{
 }
 
 
-
 export function Card( {title , link , type } : CardInterface){
         return <div>
                 <div className="bg-white border-2 border-slate-200 max-w-96 rounded-md p-4">
@@ -40,9 +39,12 @@ export function Card( {title , link , type } : CardInterface){
                         </div>
                         
                         <div className="pt-4">
-                                        {type === "youtube" &&  <iframe width="100%" height="200" src={link.replace("watch" , "embed")} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe> }
+                                        {type === "youtube" &&  <iframe width="100%" height="200" src={`https://www.youtube.com/embed/${link.split('v=')[1]?.split('&')[0]}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe> }
 
-                       
+                               {/* // https://www.youtube.com/watch?v=kq_4X_lc2bo &ab_channel=WaltDisneyStudiosIndia
+          user => // https://youtu.be/kq_4X_lc2bo?feature=shared
+
+          we have to make it the      https://www.youtube.com/embed/     */}
                         
                                         {type === "twitter" && 
                                          <blockquote className="twitter-tweet">

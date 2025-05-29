@@ -4,6 +4,9 @@ interface ButtonProps {
         varient : "primary" | "secondary";
         text : string;
         startIcon ?: ReactElement;
+        onClick ?: ()=> void;
+        fullWidth ?: boolean;
+        loading ?: boolean;
 }
 
 
@@ -15,9 +18,11 @@ const varientClasses = {
 
 const defaultStyles = "flex justify-center items-center px-4 py-2 rounded-md";
 
-export function Button({varient , text , startIcon}  : ButtonProps) {
+export function Button({varient , text , startIcon, onClick, fullWidth, loading}  : ButtonProps) {
         return  <button 
-                className={varientClasses[varient] + "   " + defaultStyles } >
+                onClick={onClick}
+                className={varientClasses[varient] + "   " + defaultStyles + 
+                `${fullWidth ? " w-full justify-center items-center " : ""}  ${loading ? " opacity-50" : ""}   ` } disabled={loading}  >
                         
                         <div className="pr-2">
                                 {startIcon}        
